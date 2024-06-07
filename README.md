@@ -1,3 +1,67 @@
+# Project Name: Simple To-Do
+## [About me](https://linkedin.com/in/ramazan-tufekci)
+
+### Project Description
+Bu proje, basit bir yapılacaklar kontrol listesi uygulamasının nasıl oluşturulacağını göstermektedir.
+
+### Smart Contract Address
+mexqz-aqaaa-aaaab-qabtq-cai
+
+### Installation Prerequisites
+Yerel cihazınızda proje oluşturmak istiyorsanız; bu aşağıdakilerin kurulumunu gerektirir:
+
+     IC SDK yükleyin.
+
+Bir terminal penceresi açarak başlayın.
+
+* 1. Adım: Projenin bir klonunu oluşturun ve Proje dosyalarını içeren klasöre gidin ve şu komutla kopyanın yerel bir örneğini başlatın:
+```
+git clone https://github.com/ramazantufekci/dapp.git
+cd dapp
+dfx start --background
+```
+* 2. Adım:Canister'ı deploy edin:
+```
+dfx deploy
+```
+* 3. Adım: addTodo yöntemi ile bir yapılacaklar kontrol listesi oluşturun:
+```
+dfx canister call simple_to_do addTodo '("Create a project")'
+dfx canister call simple_to_do addTodo '("Build the project")'
+dfx canister call simple_to_do addTodo '("Deploy the project")'
+```
+* 4. Adım: showTodos yöntemi ile yapılacaklar kontrol listesini görüntüleyin:
+
+```
+dfx canister call simple_to_do showTodos
+```
+
+* 5. Adım: Çıktının girdiğiniz değerleri döndürdüğünü doğrulayın:
+
+```
+("
+___TO-DOs___
+(1) Create a project
+(2) Build the project
+(3) Deploy the project")
+```
+
+6. Adım: CompleteTodo yöntemi ile yapılacaklar kontrol listesi öğesini tamamlayın:
+```
+dfx canister call simple_to_do completeTodo '(1)'
+```
+7. Adım: showTodos yöntemi ile yapılacaklar kontrol listesini görüntüleyin.
+```
+dfx canister call simple_to_do showTodos
+```
+8. Adım: Dönüş değerinin beklediğiniz değer ile eşleştiğini doğrulayın.
+```
+("
+___TO-DOs___
+(1) Create a project ✔
+(2) Build the project
+(3) Deploy the project")
+```
 Web3 Use Case: Decentralized Identity Verification
 Introduction
 Use Case Overview:
